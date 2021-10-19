@@ -76,5 +76,4 @@ Proceso VotosDiputados
 	Fin Para
 	
 	ImprimirVotos(votosFavor, votosContra, votosAftencion);
-	
 FinProceso
