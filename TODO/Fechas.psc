@@ -1,6 +1,6 @@
 Proceso Fecha_
 	// Elabora un algoritmo en el que compare Dia, Mes y Año ingresados por teclado con una fecha guardada.
-	hardcodedYear = 2021;
+	hardcodedYear = 2012;
 	hardcodedMonth = 10;
 	hardcodedDay = 13;
 	
@@ -24,10 +24,29 @@ Proceso Fecha_
 	Imprimir "Ingrese el año: " Sin Saltar;
 	Leer year;
 	
-	Mientras hardcodedYear < day
-		Imprimir "La fecha debe ser menor a la fecha establecida directamente en el codigo (", hardcodedDay, "/", hardcodedMonth, "/", hardcodedYear ")";
-	FinMientras
-	
-	yearDiff = hardcodedYear - year;
-	Imprimir "La diferencia entre las dos fechas es de ", day * (365 * yearDiff) " dias.";
+	Si hardcodedDay==day y hardcodedMonth==month y hardcodedYear==year Entonces
+		Escribir "Las fechas son iguales.";
+	SiNo
+		Si hardcodedYear > year Entonces
+			Escribir "La fecha ingresada es menor a la interna.";
+		SiNo
+			Si hardcodedYear > year Entonces
+				Escribir "La fecha ingresada es mayor a la interna.";
+			SiNo
+				Si hardcodedMonth > month Entonces
+					Escribir "La fecha ingresada es menor a la interna.";
+				SiNo
+					Si hardcodedMonth > month Entonces
+						Escribir "La fecha ingresada es mayor a la interna.";
+					SiNo
+						Si hardcodedDay > day Entonces
+							Escribir "La fecha ingresada es menor a la interna.";
+						SiNo
+							Escribir "La fecha ingresada es mayor a la interna.";
+						Fin Si
+					Fin Si
+				Fin Si
+			Fin Si
+		Fin Si
+	Fin Si
 FinProceso
