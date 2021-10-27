@@ -1,4 +1,4 @@
-Proceso sin_titulo
+Proceso matrices
 	//SE INGRESA LOS PRECIO DE 5 ARTICULOS Y LAS CANTIDADES VENDIDAS POR UNA EMPRESA EN SUS 4 SUCURSALES. si
 	//INFORMAR: lAS CANTIDADES TOTALES DE CADA ARTICULO. si
 	//CANTIDAD DE ARTICULOS VENDIDOS EN LA SUCURSAL 2 si
@@ -8,24 +8,16 @@ Proceso sin_titulo
 	//LA SUCURSAL DE MAYOR RECAUDACION. si
 	
 	Definir products, branches como Real;
-	Dimension products[5], branches[4, 10];
-	
-	// Products[price]
-	// Branches[product1,2,3,4,5,sales1,2,3,4,5]
+	Dimension products[5], branches[4, 5];
 	
 	Definir price, sales como Real;
 	Para i = 1 Hasta 5 Con Paso 1 Hacer
 		Imprimir "Ingrese el precio para el producto numero #", i, ": " Sin Saltar; // Sin Saltar es por decoracion
-		Leer price;
-		
+		Leer products[i];
+
 		Para j = 1 Hasta 4 Con Paso 1 Hacer
 			Imprimir "Ingrese la cantidad de ventas en la sucursal #", j, " para el producto antes mencionado: " Sin Saltar;
-			Leer sales;
-			
-			branches[j, i] = i;
-			branches[j, i+5] = sales;
-			
-			products[i] = price;
+			Leer branches[j, i];
 		FinPara
 	Fin Para
 	
@@ -34,7 +26,7 @@ Proceso sin_titulo
 	
 	Para i = 1 Hasta 5 Con Paso 1 Hacer
 		Para j = 1 Hasta 4 Con Paso 1 Hacer
-			branchSpecificSales = branches[j, i+5];
+			branchSpecificSales = branches[j, i];
 			Imprimir "Ventas en la sucursal #", j, " para el producto #", i, ": ", branchSpecificSales;
 			Si j = 1 o j = 2 Entonces
 				sucursal[j] = sucursal[j] + branchSpecificSales;
@@ -46,8 +38,7 @@ Proceso sin_titulo
 	Dimension income[4];
 	Para i = 1 Hasta 5 Hacer
 		Para j = 1 Hasta 4 Hacer
-			branchSpecificSales = branches[j, i+5];
-			
+			branchSpecificSales = branches[j, i];
 			price = products[i];
 			total = branchSpecificSales * price;
 			
