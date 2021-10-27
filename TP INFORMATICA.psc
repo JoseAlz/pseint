@@ -7,5 +7,15 @@ Proceso sin_titulo
 	//LA RECAUDACION TOTAL DE LA EMPRESA.
 	//LA SUCURSAL DE MAYOR RECAUDACION.
 	
-		
+	Definir products, sales como Real;
+	Dimension products[5];
+	
+	Para i = 1 Hasta 5 Hacer
+		Imprimir "Ingrese el precio para el producto numero ", i, ":" Sin Saltar; // Sin Saltar es por decoracion
+		Leer products[i];
+	Fin Para
+	
+	Para i = 1 Hasta 5 Hacer
+		Imprimir "El precio del producto numero ", i, " es: $", products[i];
+	FinPara
 FinProceso
